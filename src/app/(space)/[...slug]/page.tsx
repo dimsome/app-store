@@ -11,7 +11,7 @@ import env from "@/src/environments";
 import { ClaimRequest } from "@sismo-core/sismo-connect-server";
 import { notFound } from "next/navigation";
 import ProofOfLivenessCustomApp from "@/space-config/synaps/proof-of-liveness";
-import { PageContent } from "@/src/components/Layouts/PageContent";
+import ProofOfPersonhoodCustomApp from "@/space-config/worldcoin/proof-of-personhood";
 
 // This function runs at build time on the server it generates the static paths for each page
 export async function generateStaticParams() {
@@ -129,7 +129,10 @@ export default async function SpacePage({
 
   if (slug[1]) {
     const app = config.apps.find(app => app.slug === slug[1]);
-    if (app.type === "custom") {
+    if (app && app.type === "custom") {
+      if (app.path === "/worldcoin/proof-of-personhood") {
+        return <ProofOfPersonhoodCustomApp />
+      }
       if (app.path === "/synaps/proof-of-liveness") {
         return <ProofOfLivenessCustomApp />
       }

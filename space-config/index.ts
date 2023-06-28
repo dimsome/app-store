@@ -4,11 +4,13 @@ import { sismoConfig } from "./sismo";
 import { privacyIsNormalConfig } from "./privacy-is-normal";
 import { aaveChanInitiativeConfig } from "./aave-chan-initiative";
 import { synapsConfig } from "./synaps";
+import { worldcoinConfig } from "./worldcoin";
 
 export const configs: SpaceConfig[] = [
     theMergeContributorsConfig,
     sismoConfig,
     privacyIsNormalConfig,
     aaveChanInitiativeConfig,
-    synapsConfig
+    synapsConfig,
+    worldcoinConfig
 ]
