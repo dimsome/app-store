@@ -33,7 +33,7 @@ export const privacyIsNormalConfigDemo: SpaceConfig = {
     {
       type: "zkForm",
       metadata: {
-        name: "Lottery Registration",
+        name: "Lottery Registration_1",
         slug: "artwork-lottery",
         description:
           "Register to have a chance to be among 10 lucky winners to get a ‘Privacy Is Normal’ artwork'.",
