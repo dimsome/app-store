@@ -119,6 +119,16 @@ export default function ProofOfPersonhoodCustomApp(): JSX.Element {
       setDomReady(true)
     }, [])
 
+    const getRedirectParam = () => {
+        if (!window) return null;
+        const url = new URL(window.location.href);
+        const params = new URLSearchParams(url.search);
+        const redirect = params.get('redirect');
+        return decodeURIComponent(redirect);
+    }
+    const redirect = getRedirectParam();
+    console.log("redirect", redirect);
+
     if (!domReady) return;
 
     return <CustomAppContainer>
@@ -162,14 +172,14 @@ export default function ProofOfPersonhoodCustomApp(): JSX.Element {
                             </>
                         }
                     </Section>
-                    {
-                        alreadySubscribed && 
+                    {/* {
+                        alreadySubscribed &&  */}
                         <Bottom>
-                            <Button3D onClick={() => router.push("/synaps")} secondary>
-                                Back to the space
+                            <Button3D onClick={() => redirect ? window.location.href = redirect : router.push("/synaps")} secondary>
+                                { redirect ? "Back to the Vault App" : "Back to the space" }
                             </Button3D>
                         </Bottom>
-                    }
+                    {/* } */}
                 </>
             }
             {
