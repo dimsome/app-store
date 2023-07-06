@@ -17,7 +17,7 @@ export const myNewSpaceConfigMain : SpaceConfig = {
       },
       {
         type: "twitter",
-        link: "https://twitter.com/Sismo_eth", // UPDATE HERE
+        link: "https://twitter.com/Sismo_eths", // UPDATE HERE
       },
       {
         type: "discord",
